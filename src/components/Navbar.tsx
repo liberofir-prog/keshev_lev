@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { href: "#authority", label: "קצת עליי" },
   { href: "#youth", label: "נוער והורים" },
   { href: "#adults", label: "מבוגרים וזוגיות" },
   { href: "#method", label: "מתודולוגיה" },

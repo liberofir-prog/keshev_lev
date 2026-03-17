@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Brain, HeartHandshake, Target, Battery } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -49,16 +50,14 @@ export default function AdultSection() {
           >
             <div className="relative w-full max-w-md">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-rose/20 to-mint/10 blur-xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-rose/30 bg-white p-8 shadow-lg">
-                <div className="flex h-80 flex-col items-center justify-center text-center">
-                  <Battery className="mb-4 h-20 w-20 text-rose/40" />
-                  <p className="text-lg font-semibold text-warm-brown/40">
-                    אינפוגרפיקת &quot;שחיקה&quot;
-                  </p>
-                  <p className="mt-2 text-sm text-warm-brown/30">
-                    מקום לתמונה / איור
-                  </p>
-                </div>
+              <div className="relative overflow-hidden rounded-3xl border border-rose/30 bg-white shadow-lg">
+                <Image
+                  src="/images/keshev_ad.png"
+                  alt="טיפול CBT למבוגרים"
+                  width={500}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
               </div>
             </div>
           </motion.div>

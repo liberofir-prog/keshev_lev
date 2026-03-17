@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "#authority", label: "קצת עליי" },
   { href: "#youth", label: "נוער והורים" },
-  { href: "#adults", label: "מבוגרים וזוגיות" },
+  { href: "#adults", label: "מבוגרים" },
   { href: "#method", label: "מתודולוגיה" },
   { href: "#testimonials", label: "המלצות" },
   { href: "#contact", label: "יצירת קשר" },

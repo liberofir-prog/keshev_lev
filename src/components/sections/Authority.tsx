@@ -47,7 +47,7 @@ export default function Authority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-4 pt-8 text-center"
         >
           <h2 className="mb-4 text-3xl font-bold text-warm-brown sm:text-4xl">
             למה דווקא הילה?

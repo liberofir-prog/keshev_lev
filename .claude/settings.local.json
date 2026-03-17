@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-git --import-alias \"@/*\" --use-npm)",
+      "Bash(npx create-next-app@latest keshev-temp --typescript --tailwind --eslint --app --src-dir --no-git --import-alias \"@/*\" --use-npm)",
+      "Bash(cp -r /c/cloude_workspace/keshev-temp/* /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/.eslintrc.json /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/.gitignore /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/tsconfig.json /c/cloude_workspace/keshev/)",
+      "Bash(cp -r /c/cloude_workspace/keshev-temp/src /c/cloude_workspace/keshev/)",
+      "Bash(cp -r /c/cloude_workspace/keshev-temp/public /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/package.json /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/package-lock.json /c/cloude_workspace/keshev/)",
+      "Bash(cp /c/cloude_workspace/keshev-temp/postcss.config.mjs /c/cloude_workspace/keshev/)"
+    ],
+    "additionalDirectories": [
+      "C:\\cloude_workspace\\keshev-temp"
+    ]
+  }
+}

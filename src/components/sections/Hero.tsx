@@ -95,14 +95,15 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
             className="flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-mint/40 to-rose/30 blur-2xl" />
-              <div className="relative h-80 w-80 overflow-hidden rounded-full border-4 border-white shadow-2xl sm:h-96 sm:w-96">
+            <div className="relative w-full max-w-lg">
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-mint/40 to-rose/30 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border-4 border-white shadow-2xl">
                 <Image
                   src="/images/hila.png"
                   alt="הילה בן גרא - מטפלת CBT"
-                  fill
-                  className="object-cover"
+                  width={2528}
+                  height={1684}
+                  className="h-auto w-full object-cover"
                   priority
                 />
               </div>

@@ -120,21 +120,6 @@ export default function YouthSection() {
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="mt-10"
-            >
-              <Button
-                onClick={() => scrollTo("#contact")}
-                size="lg"
-                className="cursor-pointer rounded-full bg-mint px-8 py-6 text-base font-semibold text-warm-brown shadow-lg transition-all hover:bg-mint-dark hover:shadow-xl"
-              >
-                לשיחת היכרות - ללא עלות
-              </Button>
-            </motion.div>
           </motion.div>
 
           {/* Atmosphere image — starts at subtitle level */}
@@ -156,6 +141,22 @@ export default function YouthSection() {
                   className="h-auto w-full object-cover"
                 />
               </div>
+              {/* CTA button pinned to bottom-left of image */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="absolute -top-20 -left-16 z-10"
+              >
+                <Button
+                  onClick={() => scrollTo("#contact")}
+                  size="lg"
+                  className="cursor-pointer rounded-full bg-mint px-6 py-5 text-sm font-semibold text-warm-brown shadow-lg transition-all hover:bg-mint-dark hover:text-white hover:shadow-xl"
+                >
+                  לשיחת היכרות - ללא עלות
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         </div>

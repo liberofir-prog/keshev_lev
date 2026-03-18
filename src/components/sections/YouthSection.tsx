@@ -147,7 +147,7 @@ export default function YouthSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute -top-20 -left-16 z-10"
+                className="mt-4 flex justify-center lg:absolute lg:mt-0 lg:-top-20 lg:-left-16 lg:z-10"
               >
                 <Button
                   onClick={() => scrollTo("#contact")}

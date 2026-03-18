@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Brain, HeartHandshake, Target, Battery } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import MagneticButton from "@/components/MagneticButton";
+import { useScrollParallax } from "@/hooks/useGSAP";
 
 const topics = [
   {
@@ -31,16 +32,45 @@ const topics = [
   },
 ];
 
+function TopicCard({ topic, index }: { topic: (typeof topics)[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        delay: index * 0.1,
+      }}
+      className="rounded-2xl border border-rose/20 bg-white/80 p-5 transition-all duration-300 hover:border-rose/40 hover:-translate-y-1 shadow-elevated hover:shadow-elevated-hover"
+    >
+      <topic.icon className="mb-3 h-8 w-8 text-rose" />
+      <h3 className="mb-1 font-bold text-warm-brown">{topic.title}</h3>
+      <p className="text-sm leading-relaxed text-warm-brown/70">
+        {topic.description}
+      </p>
+    </motion.div>
+  );
+}
+
 export default function AdultSection() {
+  const parallaxRef = useScrollParallax(".parallax-adult-img", -40);
+
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="adults" className="bg-gradient-to-b from-mint/10 to-cream py-20 lg:py-28">
+    <section
+      id="adults"
+      ref={parallaxRef}
+      className="bg-gradient-to-b from-mint/10 to-cream py-20 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Infographic placeholder */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +80,7 @@ export default function AdultSection() {
           >
             <div className="relative w-full max-w-md">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-rose/20 to-mint/10 blur-xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-rose/30 bg-white shadow-lg">
+              <div className="parallax-adult-img relative overflow-hidden rounded-3xl border border-rose/30 bg-white shadow-elevated">
                 <Image
                   src="/images/keshev_ad.png"
                   alt="טיפול CBT למבוגרים"
@@ -75,7 +105,7 @@ export default function AdultSection() {
               מסלול מבוגרים וזוגיות
             </div>
 
-            <h2 className="mb-4 text-3xl font-bold text-warm-brown sm:text-4xl">
+            <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
               מרגישים שחוקים?
               <br />
               <span className="text-rose-dark">יש דרך אחרת</span>
@@ -89,22 +119,7 @@ export default function AdultSection() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               {topics.map((topic, index) => (
-                <motion.div
-                  key={topic.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-2xl border border-rose/20 bg-white/80 p-5 transition-all hover:border-rose/40 hover:shadow-md"
-                >
-                  <topic.icon className="mb-3 h-8 w-8 text-rose" />
-                  <h3 className="mb-1 font-bold text-warm-brown">
-                    {topic.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-warm-brown/70">
-                    {topic.description}
-                  </p>
-                </motion.div>
+                <TopicCard key={topic.title} topic={topic} index={index} />
               ))}
             </div>
 
@@ -115,13 +130,12 @@ export default function AdultSection() {
               transition={{ delay: 0.5 }}
               className="mt-10"
             >
-              <Button
+              <MagneticButton
                 onClick={() => scrollTo("#contact")}
-                size="lg"
-                className="cursor-pointer rounded-full bg-rose px-8 py-6 text-base font-semibold text-warm-brown shadow-lg transition-all hover:bg-rose-dark hover:text-white hover:shadow-xl"
+                className="shadow-elevated hover:shadow-elevated-hover cursor-pointer rounded-full bg-rose px-8 py-4 text-base font-semibold text-warm-brown transition-all hover:bg-rose-dark hover:text-white"
               >
                 לשיחת היכרות - ללא עלות
-              </Button>
+              </MagneticButton>
             </motion.div>
           </motion.div>
         </div>

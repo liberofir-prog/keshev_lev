@@ -6,7 +6,7 @@ export const contactFormSchema = z.object({
     .string()
     .min(9, "נא להזין מספר טלפון תקין")
     .regex(/^[\d\-+() ]+$/, "מספר טלפון לא תקין"),
-  type: z.enum(["youth", "adult"], {
+  type: z.enum(["youth", "adult", "other"], {
     message: "נא לבחור סוג פנייה",
   }),
 });

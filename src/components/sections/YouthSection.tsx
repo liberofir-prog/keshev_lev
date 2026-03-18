@@ -10,7 +10,8 @@ import {
   BookOpen,
   Users,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import MagneticButton from "@/components/MagneticButton";
+import { useScrollParallax } from "@/hooks/useGSAP";
 
 const topics = [
   {
@@ -51,7 +52,32 @@ const topics = [
   },
 ];
 
+function TopicCard({ topic, index }: { topic: (typeof topics)[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        delay: index * 0.08,
+      }}
+      className="rounded-2xl border border-mint/20 bg-white/80 p-5 transition-all duration-300 hover:border-mint/40 hover:-translate-y-1 shadow-elevated hover:shadow-elevated-hover"
+    >
+      <topic.icon className="mb-3 h-8 w-8 text-mint-dark" />
+      <h3 className="mb-1 font-bold text-warm-brown">{topic.title}</h3>
+      <p className="text-sm leading-relaxed text-warm-brown/70">
+        {topic.description}
+      </p>
+    </motion.div>
+  );
+}
+
 export default function YouthSection() {
+  const parallaxRef = useScrollParallax(".parallax-youth-img", -40);
+
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -59,6 +85,7 @@ export default function YouthSection() {
   return (
     <section
       id="youth"
+      ref={parallaxRef}
       className="bg-gradient-to-b from-white to-mint/10 py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -75,7 +102,7 @@ export default function YouthSection() {
             מסלול נוער והורים
           </div>
 
-          <h2 className="mb-4 text-3xl font-bold text-warm-brown sm:text-4xl">
+          <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
             לגדול זה לא פשוט.
             <br />
             <span className="text-mint-dark">
@@ -92,37 +119,15 @@ export default function YouthSection() {
 
         <div className="grid items-start gap-16 lg:grid-cols-2">
           {/* Topics grid */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="order-2 lg:order-1"
-          >
+          <div className="order-2 lg:order-1">
             <div className="grid gap-6 sm:grid-cols-2">
               {topics.map((topic, index) => (
-                <motion.div
-                  key={topic.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-2xl border border-mint/20 bg-white/80 p-5 transition-all hover:border-mint/40 hover:shadow-md"
-                >
-                  <topic.icon className="mb-3 h-8 w-8 text-mint-dark" />
-                  <h3 className="mb-1 font-bold text-warm-brown">
-                    {topic.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-warm-brown/70">
-                    {topic.description}
-                  </p>
-                </motion.div>
+                <TopicCard key={topic.title} topic={topic} index={index} />
               ))}
             </div>
+          </div>
 
-          </motion.div>
-
-          {/* Atmosphere image — starts at subtitle level */}
+          {/* Atmosphere image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +137,7 @@ export default function YouthSection() {
           >
             <div className="relative w-full max-w-md">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-mint/20 to-rose/10 blur-xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-mint/30 bg-white shadow-lg">
+              <div className="parallax-youth-img relative overflow-hidden rounded-3xl border border-mint/30 bg-white shadow-elevated">
                 <Image
                   src="/images/keshev_youth.png"
                   alt="טיפול CBT לנוער"
@@ -141,7 +146,7 @@ export default function YouthSection() {
                   className="h-auto w-full object-cover"
                 />
               </div>
-              {/* CTA button pinned to bottom-left of image */}
+              {/* CTA button */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -149,13 +154,12 @@ export default function YouthSection() {
                 transition={{ delay: 0.5 }}
                 className="mt-4 flex justify-center lg:absolute lg:mt-0 lg:-top-20 lg:-left-16 lg:z-10"
               >
-                <Button
+                <MagneticButton
                   onClick={() => scrollTo("#contact")}
-                  size="lg"
-                  className="cursor-pointer rounded-full bg-mint px-6 py-5 text-sm font-semibold text-warm-brown shadow-lg transition-all hover:bg-mint-dark hover:text-white hover:shadow-xl"
+                  className="shadow-elevated hover:shadow-elevated-hover cursor-pointer rounded-full bg-mint px-6 py-4 text-sm font-semibold text-warm-brown transition-all hover:bg-mint-dark hover:text-white"
                 >
                   לשיחת היכרות - ללא עלות
-                </Button>
+                </MagneticButton>
               </motion.div>
             </div>
           </motion.div>

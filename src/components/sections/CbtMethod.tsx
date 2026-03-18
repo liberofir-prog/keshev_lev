@@ -52,7 +52,7 @@ export default function CbtMethod() {
             הגישה הטיפולית
           </div>
 
-          <h2 className="mb-4 text-3xl font-bold text-warm-brown sm:text-4xl">
+          <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
             CBT - קצר מועד, ממוקד תוצאות, מעשי
           </h2>
 
@@ -63,72 +63,102 @@ export default function CbtMethod() {
         </motion.div>
 
         <div className="mx-auto mt-12 max-w-3xl">
-          {methods.map((method, index) => (
-            <motion.div
-              key={method.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-4"
-            >
-              <button
-                onClick={() =>
-                  setOpenId(openId === method.id ? null : method.id)
-                }
-                className={`flex w-full items-center gap-4 rounded-2xl border-2 p-5 text-right transition-all ${
-                  openId === method.id
-                    ? method.color === "mint"
-                      ? "border-mint bg-mint/10"
-                      : "border-rose bg-rose/10"
-                    : "border-transparent bg-cream/80 hover:bg-cream"
-                }`}
-              >
-                <div
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
-                    method.color === "mint" ? "bg-mint/30" : "bg-rose/30"
-                  }`}
-                >
-                  <method.icon
-                    className={`h-6 w-6 ${
-                      method.color === "mint"
-                        ? "text-mint-dark"
-                        : "text-rose-dark"
-                    }`}
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-warm-brown">
-                    {method.title}
-                  </h3>
-                  <p className="text-sm text-warm-brown/60">
-                    {method.subtitle}
-                  </p>
-                </div>
-                <ChevronDown
-                  className={`h-5 w-5 text-warm-brown/40 transition-transform ${
-                    openId === method.id ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+          <div className="relative">
+            {/* Vertical progress line */}
+            <div className="absolute top-0 bottom-0 right-[29px] hidden w-[2px] bg-gradient-to-b from-mint via-rose to-mint/30 md:block" />
 
-              <AnimatePresence>
-                {openId === method.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+            {methods.map((method, index) => {
+              const isOpen = openId === method.id;
+              return (
+                <motion.div
+                  key={method.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: index * 0.1,
+                  }}
+                  className="relative mb-4 md:pr-16"
+                >
+                  {/* Step number circle on progress line */}
+                  <div
+                    className={`absolute right-[18px] top-5 z-10 hidden h-[22px] w-[22px] items-center justify-center rounded-full border-2 text-xs font-bold transition-all duration-300 md:flex ${
+                      isOpen
+                        ? method.color === "mint"
+                          ? "border-mint bg-mint text-white"
+                          : "border-rose bg-rose text-white"
+                        : "border-cream-dark bg-white text-warm-brown/50"
+                    }`}
                   >
-                    <p className="px-5 pt-4 pb-6 text-base leading-relaxed text-warm-brown/80">
-                      {method.description}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    {index + 1}
+                  </div>
+
+                  <button
+                    onClick={() =>
+                      setOpenId(isOpen ? null : method.id)
+                    }
+                    className={`flex w-full items-center gap-4 rounded-2xl border-2 p-5 text-right transition-all duration-300 ${
+                      isOpen
+                        ? method.color === "mint"
+                          ? "border-mint bg-mint/10 shadow-elevated"
+                          : "border-rose bg-rose/10 shadow-elevated"
+                        : "border-transparent bg-cream/80 hover:bg-cream hover:shadow-sm"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+                        method.color === "mint" ? "bg-mint/30" : "bg-rose/30"
+                      } ${isOpen ? "scale-110" : ""}`}
+                    >
+                      <method.icon
+                        className={`h-6 w-6 ${
+                          method.color === "mint"
+                            ? "text-mint-dark"
+                            : "text-rose-dark"
+                        }`}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-warm-brown">
+                        {method.title}
+                      </h3>
+                      <p className="text-sm text-warm-brown/60">
+                        {method.subtitle}
+                      </p>
+                    </div>
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <ChevronDown className="h-5 w-5 text-warm-brown/40" />
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          height: { type: "spring", stiffness: 200, damping: 25 },
+                          opacity: { duration: 0.2 },
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-5 pt-4 pb-6 text-base leading-relaxed text-warm-brown/80">
+                          {method.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

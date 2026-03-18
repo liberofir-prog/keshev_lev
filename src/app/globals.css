@@ -105,3 +105,129 @@
     @apply font-sans scroll-smooth;
   }
 }
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-mint-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-brown);
+}
+
+/* Layered shadow system */
+.shadow-elevated {
+  box-shadow:
+    0 1px 2px rgba(139, 115, 85, 0.04),
+    0 4px 8px rgba(139, 115, 85, 0.06),
+    0 12px 24px rgba(139, 115, 85, 0.08);
+}
+.shadow-floating {
+  box-shadow:
+    0 2px 4px rgba(139, 115, 85, 0.04),
+    0 8px 16px rgba(139, 115, 85, 0.06),
+    0 24px 48px rgba(139, 115, 85, 0.1);
+}
+.shadow-elevated-hover {
+  box-shadow:
+    0 2px 4px rgba(139, 115, 85, 0.06),
+    0 8px 16px rgba(139, 115, 85, 0.08),
+    0 20px 40px rgba(139, 115, 85, 0.12);
+}
+
+/* Noise/grain texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Animated gradient background for Hero */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Conic gradient rotation for photo frame */
+@keyframes rotate-conic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-conic-slow {
+  animation: rotate-conic 8s linear infinite;
+}
+
+/* Floating animation variants */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes float-gentle-reverse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-gentle-reverse 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-gentle 9s ease-in-out infinite;
+}
+
+/* SVG checkmark draw animation */
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-check {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-check 0.6s ease forwards 0.3s;
+}

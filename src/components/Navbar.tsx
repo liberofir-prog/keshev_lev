@@ -17,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -33,9 +34,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-cream/95 backdrop-blur-md shadow-sm"
+          ? "bg-cream/70 shadow-elevated backdrop-blur-xl backdrop-saturate-150 border-b border-white/30"
           : "bg-transparent"
       }`}
     >
@@ -61,15 +62,30 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div
+            className="hidden items-center gap-1 md:flex"
+            onMouseLeave={() => setHoveredLink(null)}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="rounded-full px-4 py-2 text-sm font-medium text-warm-brown transition-colors hover:bg-mint/30 hover:text-warm-brown"
+                onMouseEnter={() => setHoveredLink(link.href)}
+                className="relative rounded-full px-4 py-2 text-sm font-medium text-warm-brown transition-colors"
               >
-                {link.label}
+                {hoveredLink === link.href && (
+                  <motion.span
+                    layoutId="navIndicator"
+                    className="absolute inset-0 rounded-full bg-mint/25"
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 30,
+                    }}
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
               </a>
             ))}
           </div>
@@ -92,18 +108,22 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-cream/95 backdrop-blur-md md:hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden bg-cream/80 backdrop-blur-xl backdrop-saturate-150 md:hidden border-b border-white/30"
           >
             <div className="space-y-1 px-4 pb-4">
-              {navLinks.map((link) => (
-                <a
+              {navLinks.map((link, index) => (
+                <motion.a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
                   className="block rounded-lg px-4 py-3 text-sm font-medium text-warm-brown transition-colors hover:bg-mint/30"
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>

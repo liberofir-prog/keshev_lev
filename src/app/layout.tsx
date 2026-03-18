@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Rubik, Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 
 const rubik = Rubik({
   variable: "--font-sans",
   subsets: ["latin", "hebrew"],
   weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const frankRuhlLibre = Frank_Ruhl_Libre({
+  variable: "--font-display",
+  subsets: ["latin", "hebrew"],
+  weight: ["500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body className={`${rubik.variable} antialiased`}>{children}</body>
+      <body className={`${rubik.variable} ${frankRuhlLibre.variable} antialiased`}>{children}</body>
     </html>
   );
 }

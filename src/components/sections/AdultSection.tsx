@@ -48,7 +48,7 @@ function TopicCard({ topic, index }: { topic: (typeof topics)[0]; index: number 
     >
       <topic.icon className="mb-3 h-8 w-8 text-rose" />
       <h3 className="mb-1 font-bold text-warm-brown">{topic.title}</h3>
-      <p className="text-sm leading-relaxed text-warm-brown/70">
+      <p className="text-sm leading-relaxed text-warm-brown-text">
         {topic.description}
       </p>
     </motion.div>
@@ -111,7 +111,7 @@ export default function AdultSection() {
               <span className="text-rose-dark">יש דרך אחרת</span>
             </h2>
 
-            <p className="mb-8 text-lg leading-relaxed text-warm-brown/70">
+            <p className="mb-8 text-lg leading-relaxed text-warm-brown-text">
               עומס בעבודה, קשיים בזוגיות, תחושה שהכל נערם. טיפול CBT נותן כלים
               מעשיים - לא &quot;חפירות&quot; אלא שיטות מוכחות שעובדות מהר ומשנות
               את איכות החיים.

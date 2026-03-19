@@ -37,7 +37,7 @@ function FloatingInput({
       />
       <label
         htmlFor={id}
-        className="pointer-events-none absolute right-4 top-2 text-xs font-medium text-warm-brown/50 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-mint-dark"
+        className="pointer-events-none absolute right-4 top-2 text-xs font-medium text-warm-brown-text/80 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-mint-dark"
       >
         {label}
       </label>
@@ -159,7 +159,7 @@ export default function ContactForm() {
             <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
               הילה מחכה להקשיב לכם
             </h2>
-            <p className="text-lg text-warm-brown/70">
+            <p className="text-lg text-warm-brown-text">
               השאירו פרטים לשיחת היכרות קצרה וללא התחייבות
             </p>
           </motion.div>
@@ -181,7 +181,7 @@ export default function ContactForm() {
                 <h3 className="font-display mb-2 text-2xl font-bold text-warm-brown">
                   הפרטים נשלחו בהצלחה!
                 </h3>
-                <p className="text-warm-brown/70">
+                <p className="text-warm-brown-text">
                   הילה תחזור אליכם בהקדם לשיחת היכרות קצרה
                 </p>
               </motion.div>
@@ -226,7 +226,7 @@ export default function ContactForm() {
                     </select>
                     <label
                       htmlFor="type"
-                      className="pointer-events-none absolute right-4 top-2 text-xs font-medium text-warm-brown/50"
+                      className="pointer-events-none absolute right-4 top-2 text-xs font-medium text-warm-brown-text/80"
                     >
                       סוג הפנייה
                     </label>

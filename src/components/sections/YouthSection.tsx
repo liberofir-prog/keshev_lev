@@ -68,7 +68,7 @@ function TopicCard({ topic, index }: { topic: (typeof topics)[0]; index: number 
     >
       <topic.icon className="mb-3 h-8 w-8 text-mint-dark" />
       <h3 className="mb-1 font-bold text-warm-brown">{topic.title}</h3>
-      <p className="text-sm leading-relaxed text-warm-brown/70">
+      <p className="text-sm leading-relaxed text-warm-brown-text">
         {topic.description}
       </p>
     </motion.div>
@@ -110,7 +110,7 @@ export default function YouthSection() {
             </span>
           </h2>
 
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-warm-brown/70">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-warm-brown-text">
             גיל ההתבגרות מלווה באתגרים רגשיים, חברתיים ולימודיים. טיפול CBT
             נותן למתבגרים ולהורים כלים מעשיים ומבוססי מחקר להתמודדות יעילה -
             קצר מועד וממוקד תוצאות.

@@ -97,7 +97,7 @@ function CredentialCard({
         )}
         {item.hasCounter && " משפחות"}
       </h3>
-      <p className="text-sm leading-relaxed text-warm-brown/70">
+      <p className="text-sm leading-relaxed text-warm-brown-text">
         {item.description}
       </p>
     </motion.div>
@@ -118,7 +118,7 @@ export default function Authority() {
           <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
             למה דווקא הילה?
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-warm-brown/70">
+          <p className="mx-auto max-w-2xl text-lg text-warm-brown-text">
             שילוב ייחודי של סמכות בשטח וכלים מעשיים - הילה מביאה את הניסיון
             המערכתי מבית הספר ישירות לקליניקה
           </p>

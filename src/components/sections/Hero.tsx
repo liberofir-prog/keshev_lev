@@ -136,7 +136,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-warm-brown/80 lg:mx-0"
+              className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-warm-brown-text lg:mx-0"
             >
               טיפול CBT ממוקד תוצאות, עם שילוב ייחודי של ניסיון רב שנים כיועצת
               חינוכית בחטיבות ביניים וארגז כלים מעשי של מטפלת קוגניטיבית-התנהגותית.
@@ -209,7 +209,7 @@ export default function Hero() {
             onClick={() => scrollTo("#authority")}
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="rounded-full bg-white/60 p-3 text-warm-brown/50 shadow-md backdrop-blur-sm transition-colors hover:text-warm-brown"
+            className="rounded-full bg-white/60 p-3 text-warm-brown-text/80 shadow-md backdrop-blur-sm transition-colors hover:text-warm-brown"
             aria-label="גלול למטה"
           >
             <ArrowDown className="h-5 w-5" />

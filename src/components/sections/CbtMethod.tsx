@@ -56,7 +56,7 @@ export default function CbtMethod() {
             CBT - קצר מועד, ממוקד תוצאות, מעשי
           </h2>
 
-          <p className="mx-auto max-w-2xl text-lg text-warm-brown/70">
+          <p className="mx-auto max-w-2xl text-lg text-warm-brown-text">
             טיפול קוגניטיבי-התנהגותי (CBT) הוא הגישה הטיפולית המבוססת מחקר ביותר
             בעולם. הנה הכלים שהילה משתמשת בהם:
           </p>
@@ -90,7 +90,7 @@ export default function CbtMethod() {
                         ? method.color === "mint"
                           ? "border-mint bg-mint text-white"
                           : "border-rose bg-rose text-white"
-                        : "border-cream-dark bg-white text-warm-brown/50"
+                        : "border-cream-dark bg-white text-warm-brown-text/80"
                     }`}
                   >
                     {index + 1}
@@ -125,7 +125,7 @@ export default function CbtMethod() {
                       <h3 className="text-lg font-bold text-warm-brown">
                         {method.title}
                       </h3>
-                      <p className="text-sm text-warm-brown/60">
+                      <p className="text-sm text-warm-brown-text">
                         {method.subtitle}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default function CbtMethod() {
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      <ChevronDown className="h-5 w-5 text-warm-brown/40" />
+                      <ChevronDown className="h-5 w-5 text-warm-brown-text/80" />
                     </motion.div>
                   </button>
 
@@ -149,7 +149,7 @@ export default function CbtMethod() {
                         }}
                         className="overflow-hidden"
                       >
-                        <p className="px-5 pt-4 pb-6 text-base leading-relaxed text-warm-brown/80">
+                        <p className="px-5 pt-4 pb-6 text-base leading-relaxed text-warm-brown">
                           {method.description}
                         </p>
                       </motion.div>

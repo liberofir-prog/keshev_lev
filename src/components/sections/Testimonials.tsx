@@ -47,7 +47,7 @@ export default function Testimonials() {
           <h2 className="font-display mb-4 text-3xl font-bold text-warm-brown sm:text-4xl md:text-5xl">
             מה אומרים מי שכבר עברו את הדרך
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-warm-brown/70">
+          <p className="mx-auto max-w-2xl text-lg text-warm-brown-text">
             הורים, מבוגרים וזוגות שחוו שינוי אמיתי
           </p>
         </motion.div>
@@ -89,7 +89,7 @@ export default function Testimonials() {
               </span>
 
               <div className="relative">
-                <p className="mb-6 text-base leading-relaxed text-warm-brown/80">
+                <p className="mb-6 text-base leading-relaxed text-warm-brown">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
@@ -98,7 +98,7 @@ export default function Testimonials() {
                     <p className="font-bold text-warm-brown">
                       {testimonial.author}
                     </p>
-                    <p className="text-sm text-warm-brown/60">
+                    <p className="text-sm text-warm-brown-text">
                       {testimonial.role}
                     </p>
                   </div>

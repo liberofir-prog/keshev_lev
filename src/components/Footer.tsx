@@ -10,7 +10,7 @@ export default function Footer() {
       {/* Wave divider at top */}
       <SectionDivider variant="gentle" fillColor="#8B7355" />
 
-      <div className="bg-gradient-to-b from-warm-brown to-warm-brown/90 py-12 text-white/80">
+      <div className="bg-gradient-to-b from-warm-brown to-warm-brown/90 py-12 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
             {/* Brand */}
@@ -22,7 +22,7 @@ export default function Footer() {
                 height={72}
                 className="h-18 w-auto brightness-0 invert"
               />
-              <span className="text-sm text-white/50">| הילה בן גרא</span>
+              <span className="text-sm text-white/70">| הילה בן גרא</span>
             </div>
 
             {/* Contact info */}
@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/40">
+          <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/60">
             <p>
               &copy; {new Date().getFullYear()} קשב הלב - הילה בן גרא. כל
               הזכויות שמורות.

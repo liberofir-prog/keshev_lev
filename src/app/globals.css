@@ -57,6 +57,7 @@
   --color-cream-dark: #F5EDE0;
   --color-warm-brown: #8B7355;
   --color-warm-brown-light: #A89070;
+  --color-warm-brown-text: #5C4633;
 }
 
 :root {
@@ -71,7 +72,7 @@
   --secondary: #E6A8A8;
   --secondary-foreground: oklch(0.22 0.02 50);
   --muted: #F5EDE0;
-  --muted-foreground: oklch(0.45 0.02 50);
+  --muted-foreground: oklch(0.38 0.02 50);
   --accent: #d4eadd;
   --accent-foreground: oklch(0.22 0.02 50);
   --destructive: oklch(0.577 0.245 27.325);

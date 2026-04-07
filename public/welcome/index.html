@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קשב הלב - הילה בן גרא</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'keshev-salmon': '#E08880',
+                        'keshev-sage': '#7FB5A0',
+                        'keshev-cream': '#F3F1EC',
+                        'keshev-dark': '#444444',
+                    },
+                    fontFamily: {
+                        'heebo': ['Heebo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-200 font-heebo text-keshev-dark flex justify-center h-screen overflow-hidden">
+
+    <div class="w-full max-w-md bg-keshev-cream shadow-2xl overflow-y-auto h-full snap-y snap-mandatory no-scrollbar relative">
+
+        <!-- Page 1: השער -->
+        <section class="h-full w-full snap-start flex flex-col items-center justify-center p-8 text-center relative">
+            <div class="absolute top-8 w-full text-center flex flex-col items-center">
+                <img src="logo.png" alt="קשב הלב" class="w-48 h-48 mb-2 object-contain" />
+            </div>
+
+            <div class="mt-48">
+                <h1 class="text-5xl font-extrabold text-keshev-sage leading-tight mb-4">
+                    עושים סדר <br>ברעש.
+                </h1>
+                <h3 class="text-xl font-semibold text-keshev-dark mb-6">
+                    המדריך המעשי למתבגר<br> (ולהוריו) בעולם של עומס.
+                </h3>
+                <div class="bg-white/60 p-4 rounded-2xl shadow-sm border border-white">
+                    <p class="text-lg font-bold text-keshev-salmon">
+                        כשמשהו מרגיש "תקוע" בבית, אבל קשה לשים עליו את האצבע.
+                    </p>
+                </div>
+            </div>
+
+            <div class="absolute bottom-2 animate-bounce">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-keshev-dark/50"></i>
+            </div>
+        </section>
+
+        <!-- Page 2: זיהוי הכאב -->
+        <section class="h-full w-full snap-start flex flex-col justify-center p-8">
+            <h2 class="text-3xl font-bold text-keshev-salmon mb-6 text-center">
+                זה נשמע לכם מוכר?
+            </h2>
+            <p class="text-lg mb-8 leading-relaxed text-center">
+                כהורים למתבגרים, אנחנו פוגשים לא מעט רגעי תסכול. האם הילד שלכם:
+            </p>
+
+            <ul class="space-y-6">
+                <li class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                    <div class="bg-keshev-sage/20 p-2 rounded-lg ml-4">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-keshev-sage"></i>
+                    </div>
+                    <div>
+                        <strong class="block text-keshev-dark mb-1">חכם ומוכשר, אבל המטלות נערמות?</strong>
+                        <span class="text-sm text-gray-600">(פער בין הפוטנציאל לביצוע)</span>
+                    </div>
+                </li>
+                <li class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                    <div class="bg-keshev-salmon/20 p-2 rounded-lg ml-4">
+                        <i data-lucide="battery-warning" class="w-6 h-6 text-keshev-salmon"></i>
+                    </div>
+                    <div>
+                        <strong class="block text-keshev-dark mb-1">נמנע ממשימות מתוך "עצלנות"?</strong>
+                        <span class="text-sm text-gray-600">(אך בפועל זו הצפה וחרדה)</span>
+                    </div>
+                </li>
+                <li class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                    <div class="bg-keshev-sage/20 p-2 rounded-lg ml-4">
+                        <i data-lucide="frown" class="w-6 h-6 text-keshev-sage"></i>
+                    </div>
+                    <div>
+                        <strong class="block text-keshev-dark mb-1">חווה קושי בוויסות רגשי?</strong>
+                        <span class="text-sm text-gray-600">(עומס מנטלי ובלבול)</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="mt-8 text-center font-bold text-lg text-keshev-dark">
+                אתם לא לבד, וזו לא גזירת גורל.
+            </div>
+        </section>
+
+        <!-- Page 3: נעים מאוד -->
+        <section class="h-full w-full snap-start flex flex-col justify-center p-8 bg-white">
+            <!-- Hila photo -->
+            <div class="flex flex-col items-center mb-6">
+                <div class="w-32 h-32 rounded-full overflow-hidden shadow-md">
+                    <img src="hila-fb.png" alt="הילה בן גרא" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-keshev-dark">הילה בן גרא</h3>
+                <span class="text-sm text-keshev-sage font-medium">מטפלת CBT ויועצת חינוכית (M.A)</span>
+            </div>
+
+            <div class="text-center mb-5">
+                <h2 class="text-2xl font-bold text-keshev-sage leading-tight">
+                    זה לא "האופי שלו", אלו כלים שחסרים.
+                </h2>
+            </div>
+
+            <div class="bg-keshev-cream p-5 rounded-2xl relative shadow-sm border border-gray-100">
+                <i data-lucide="quote" class="w-8 h-8 text-keshev-salmon/40 absolute -top-4 -right-2 bg-white rounded-full p-1"></i>
+                <p class="text-sm leading-relaxed mb-3">
+                    אחרי 7 שנים של עבודה יומיומית במסדרונות חטיבת הביניים, ראיתי מקרוב איך נראה עומס של מתבגרים – בווטסאפ הכיתתי, מול המורים, ומול הציפיות של עצמם.
+                </p>
+                <p class="text-sm leading-relaxed">
+                    בגיל ההתבגרות, המוח הוא "אתר בנייה". הקשיים נובעים לרוב מעומס על התפקודים הניהוליים, ולא מחוסר אכפתיות.
+                </p>
+            </div>
+
+            <div class="mt-5 text-center bg-keshev-sage/10 py-3 px-6 rounded-full inline-block self-center">
+                <span class="font-bold text-keshev-sage">החדשות הטובות? אפשר ללמד לעשות סדר.</span>
+            </div>
+        </section>
+
+        <!-- Page 3.5: כלי מעשי (בית משפט למחשבות) -->
+        <section class="h-full w-full snap-start flex flex-col justify-center p-4 relative bg-gray-200">
+            <div class="w-full max-h-[92vh] bg-white rounded-[2rem] shadow-2xl overflow-hidden relative border border-gray-100 flex flex-col my-auto">
+                <div class="h-2.5 w-full bg-gradient-to-r from-keshev-salmon to-keshev-sage shrink-0"></div>
+
+                <div class="p-5 pb-2 text-center relative shrink-0">
+                    <div class="inline-flex items-center justify-center gap-2 bg-keshev-salmon text-white font-bold px-4 py-1.5 rounded-full text-xs mb-3 shadow-md animate-pulse">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        <span>צילום מסך להורים - שמרו!</span>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-keshev-dark leading-tight">
+                        המדריך המהיר:<br> <span class="text-keshev-salmon">"בית משפט למחשבות"</span>
+                    </h2>
+                </div>
+
+                <div class="px-5 py-2.5 bg-keshev-cream/80 mx-5 rounded-2xl border border-keshev-cream shrink-0 text-center shadow-inner">
+                    <p class="text-sm text-gray-700 font-medium">
+                        המתבגר נכנס הביתה וזורק:<br>
+                        <strong class="text-xl text-keshev-dark block mt-1">"כולם שונאים אותי!"</strong>
+                    </p>
+                </div>
+
+                <div class="px-5 py-3 space-y-3.5 flex-grow overflow-y-auto no-scrollbar flex flex-col justify-center">
+                    <p class="text-sm leading-relaxed text-gray-700 font-medium bg-gray-50 p-2.5 rounded-lg border-r-4 border-gray-300 shrink-0">
+                        במקום להתווכח או לגונן, חרדה זקוקה לסדר. <strong>שאלו את 3 השאלות הבאות:</strong>
+                    </p>
+
+                    <div class="space-y-3.5 shrink-0">
+                        <div class="relative pl-3 border-r-4 border-keshev-salmon">
+                            <strong class="block text-keshev-dark font-bold text-sm mb-1 flex items-center gap-2">
+                                <i data-lucide="scale" class="w-4 h-4 text-keshev-salmon"></i> 1. חקירה נגדית (עובדות)
+                            </strong>
+                            <p class="text-sm text-gray-700 leading-snug">"האם <span class="underline decoration-keshev-salmon/50">כולם</span> שונאים אותך? היה לפחות ילד אחד שדיבר איתך היום?"</p>
+                        </div>
+
+                        <div class="relative pl-3 border-r-4 border-keshev-sage">
+                            <strong class="block text-keshev-dark font-bold text-sm mb-1 flex items-center gap-2">
+                                <i data-lucide="search" class="w-4 h-4 text-keshev-sage"></i> 2. חיפוש האמצע (גמישות)
+                            </strong>
+                            <p class="text-sm text-gray-700 leading-snug">"יש עוד הסבר למה שקרה? אולי הילד שפגע בך היה במצב רוח רע שלא קשור אליך?"</p>
+                        </div>
+
+                        <div class="relative pl-3 border-r-4 border-keshev-dark">
+                            <strong class="block text-keshev-dark font-bold text-sm mb-1 flex items-center gap-2">
+                                <i data-lucide="gavel" class="w-4 h-4 text-keshev-dark"></i> 3. פסק הדין (ניסוח מחדש)
+                            </strong>
+                            <p class="text-sm text-gray-700 leading-snug">"בוא נדייק: 'הייתה לי תקרית מבאסת עם ילד אחד, אבל זה לא אומר שכולם נגדי'."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 border-t border-gray-100 p-4 shrink-0 rounded-b-[2rem]">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="logo.png" alt="קשב הלב" class="w-9 h-9 object-contain" />
+                            <div>
+                                <h3 class="font-bold text-keshev-dark text-sm">קשב הלב - הילה בן גרא</h3>
+                                <div class="flex items-center gap-1 mt-0.5 text-sm font-bold text-keshev-salmon">
+                                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                                    <span>054-737-2712</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/972547372712" target="_blank" class="bg-keshev-sage hover:bg-opacity-90 text-white p-2.5 rounded-full shadow-md transition-all flex items-center justify-center">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-2 left-0 right-0 flex justify-center animate-bounce pointer-events-none z-0">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-keshev-dark/30"></i>
+            </div>
+        </section>
+
+        <!-- Page 4: תחומי הטיפול -->
+        <section class="min-h-full w-full snap-start flex flex-col justify-center p-6 bg-gray-50 relative pb-12">
+            <h2 class="text-3xl font-bold text-keshev-salmon mb-2 text-center mt-4">
+                במה אנחנו מטפלים?
+            </h2>
+            <p class="text-center text-sm mb-6 text-keshev-dark">
+                לחצו על כל נושא כדי לראות את האתגרים הנפוצים:
+            </p>
+
+            <div class="w-full space-y-3 z-10">
+                <details class="group bg-white rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden border-r-4 border-keshev-salmon" name="treatments">
+                    <summary class="flex items-center justify-between p-4 font-bold text-keshev-dark cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="wind" class="w-5 h-5 text-keshev-salmon"></i>
+                            חרדה ולחץ
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 pt-1 space-y-2 text-sm text-gray-600 border-t border-gray-50 mt-2">
+                        <p><strong class="text-keshev-salmon">חרדת בחינות:</strong> "בלקאאוט" במבחנים, דפיקות לב מואצות והימנעות מלמידה.</p>
+                        <p><strong class="text-keshev-salmon">חרדה חברתית:</strong> הסתגרות בחדר, הימנעות ממפגשים וניתוח יתר של הודעות וואטסאפ.</p>
+                        <p><strong class="text-keshev-salmon">דאגנות לעתיד:</strong> מחשבות קטסטרופליות, הצפת מחשבות וקושי להירדם בלילה.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden border-r-4 border-keshev-sage" name="treatments">
+                    <summary class="flex items-center justify-between p-4 font-bold text-keshev-dark cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="brain-circuit" class="w-5 h-5 text-keshev-sage"></i>
+                            תפקודים ועומס מנטלי
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 pt-1 space-y-2 text-sm text-gray-600 border-t border-gray-50 mt-2">
+                        <p><strong class="text-keshev-sage">דחיינות והימנעות:</strong> מטלות נערמות, תדמית של "עצלנות", וחוסר מוטיבציה לפעול.</p>
+                        <p><strong class="text-keshev-sage">פרפקציוניזם משתק:</strong> תסכול קיצוני מציון 90, מחיקת עבודות וקושי להתחיל משימות.</p>
+                        <p><strong class="text-keshev-sage">ויסות קשב:</strong> תסכול וייאוש מהמסגרת הלימודית, קושי בארגון וניהול זמן.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden border-r-4 border-keshev-salmon" name="treatments">
+                    <summary class="flex items-center justify-between p-4 font-bold text-keshev-dark cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="users" class="w-5 h-5 text-keshev-salmon"></i>
+                            דימוי עצמי וזהות
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 pt-1 space-y-2 text-sm text-gray-600 border-t border-gray-50 mt-2">
+                        <p><strong class="text-keshev-salmon">דימוי עצמי נמוך:</strong> הלקאה עצמית ("אני אפס"), חוסר ביטחון וויתור מראש.</p>
+                        <p><strong class="text-keshev-salmon">דימוי גוף:</strong> השוואה אובססיבית למודלים בטיקטוק/אינסטגרם וחוסר שביעות רצון קיצוני.</p>
+                        <p><strong class="text-keshev-salmon">משברים חברתיים:</strong> התמודדות עם חרם, דחייה חברתית, שיימינג ברשת ואלימות מילולית.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden border-r-4 border-keshev-sage" name="treatments">
+                    <summary class="flex items-center justify-between p-4 font-bold text-keshev-dark cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="activity" class="w-5 h-5 text-keshev-sage"></i>
+                            ויסות רגשי
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 pt-1 space-y-2 text-sm text-gray-600 border-t border-gray-50 mt-2">
+                        <p><strong class="text-keshev-sage">התפרצויות זעם:</strong> "פתיל קצר", טריקת דלתות, וצעקות לא פרופורציונליות בבית.</p>
+                        <p><strong class="text-keshev-sage">התנהגויות כפייתיות:</strong> תלישת שיער, חיטוט בעור וטקסים קטנים שמעידים על לחץ.</p>
+                        <p><strong class="text-keshev-sage">תלות במסכים:</strong> זמן מסך פוגעני, קשיי שינה, והימנעות מחיים חברתיים לטובת גיימינג.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden border-r-4 border-keshev-salmon" name="treatments">
+                    <summary class="flex items-center justify-between p-4 font-bold text-keshev-dark cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="home" class="w-5 h-5 text-keshev-salmon"></i>
+                            הדרכת הורים
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 pt-1 space-y-2 text-sm text-gray-600 border-t border-gray-50 mt-2">
+                        <p><strong class="text-keshev-salmon">שחיקת סמכות:</strong> ויכוחים בלתי פוסקים, תחושה של "הולכים על ביצים" בבית ונתק תקשורתי.</p>
+                        <p><strong class="text-keshev-salmon">התנהלות מול המערכת:</strong> תחושת אבוד מול דרישות בית הספר, מורים וקשיים במיצוי זכויות אבחון.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="absolute bottom-2 left-0 right-0 flex justify-center animate-bounce pointer-events-none">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-keshev-dark/30"></i>
+            </div>
+        </section>
+
+        <!-- Page 5: השיטה -->
+        <section class="h-full w-full snap-start flex flex-col justify-center p-8">
+            <h2 class="text-3xl font-bold text-keshev-salmon mb-8 text-center">
+                הדרך של קשב הלב
+            </h2>
+            <p class="text-center text-md mb-8 px-4">
+                טיפול קוגניטיבי-התנהגותי (CBT) ממוקד מטרה שמייצר תוצאות בשטח:
+            </p>
+
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-keshev-sage before:to-transparent">
+                <div class="relative flex items-center justify-between group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-keshev-cream bg-keshev-sage text-white font-bold shadow shrink-0 z-10">1</div>
+                    <div class="w-[calc(100%-3rem)] p-4 bg-white rounded-xl shadow-sm border border-gray-100 ml-4">
+                        <h3 class="font-bold text-keshev-dark mb-1">מיפוי משותף</h3>
+                        <p class="text-sm text-gray-600">מזהים בדיוק מה תוקע אותנו (מחשבות מכשילות, עיוותי חשיבה).</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-keshev-cream bg-keshev-salmon text-white font-bold shadow shrink-0 z-10">2</div>
+                    <div class="w-[calc(100%-3rem)] p-4 bg-white rounded-xl shadow-sm border border-gray-100 ml-4">
+                        <h3 class="font-bold text-keshev-dark mb-1">ארגז כלים</h3>
+                        <p class="text-sm text-gray-600">טכניקות מעשיות לוויסות רגשי וניהול משימות – ב"עברית" פשוטה.</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-keshev-cream bg-keshev-sage text-white font-bold shadow shrink-0 z-10">3</div>
+                    <div class="w-[calc(100%-3rem)] p-4 bg-white rounded-xl shadow-sm border border-gray-100 ml-4">
+                        <h3 class="font-bold text-keshev-dark mb-1">יוצאים לשטח</h3>
+                        <p class="text-sm text-gray-600">מתרגלים את הכלים בחיי היומיום עד לבניית ביטחון עצמי.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 6: CTA -->
+        <section class="h-full w-full snap-start flex flex-col justify-center p-8 text-center bg-white">
+            <h2 class="text-3xl font-bold text-keshev-sage mb-4 leading-tight">
+                מוכנים לעזור להם לשחרר את התקיעות?
+            </h2>
+            <p class="text-lg text-keshev-dark mb-10">
+                הטיפולים מתקיימים בקליניקה פרטית ודיסקרטית. החזירו את השליטה והרוגע לבית.
+            </p>
+
+            <div class="bg-keshev-cream p-6 rounded-2xl shadow-sm border border-gray-100 w-full mb-8">
+                <div class="w-20 h-20 rounded-full overflow-hidden shadow-md mx-auto mb-3">
+                    <img src="hila-fb.png" alt="הילה בן גרא" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-bold text-xl text-keshev-dark mb-1">הילה בן גרא</h3>
+                <p class="text-md text-gray-600 mb-6">מטפלת CBT ויועצת חינוכית (M.A)</p>
+
+                <div class="space-y-4">
+                    <a href="https://wa.me/972547372712" target="_blank" class="flex items-center justify-center gap-2 bg-keshev-salmon hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        לתיאום התייעצות בוואטסאפ
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61579465506311" target="_blank" class="flex items-center justify-center gap-2 bg-white text-keshev-sage border-2 border-keshev-sage font-bold py-3 px-6 rounded-xl hover:bg-keshev-sage/5 transition-all">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                        לעמוד הפייסבוק שלנו
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span class="flex items-center gap-1"><i data-lucide="phone" class="w-4 h-4"></i> 054-737-2712</span>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -19,6 +19,23 @@ export const metadata: Metadata = {
   title: "קשב הלב - הילה בן גרא | טיפול CBT ממוקד",
   description:
     "להחזיר את השקט הביתה - טיפול CBT ממוקד עם המומחיות של הילה בן גרא. יועצת חינוכית ומטפלת CBT לנוער, מבוגרים וזוגות.",
+  openGraph: {
+    title: "קשב הלב - הילה בן גרא | טיפול CBT ממוקד",
+    description:
+      "להחזיר את השקט הביתה - טיפול CBT ממוקד עם המומחיות של הילה בן גרא. יועצת חינוכית ומטפלת CBT לנוער, מבוגרים וזוגות.",
+    url: "https://www.keshev-lev.co.il",
+    siteName: "קשב הלב",
+    images: [
+      {
+        url: "https://www.keshev-lev.co.il/welcome/logo.png",
+        width: 512,
+        height: 512,
+        alt: "לוגו קשב הלב - הילה בן גרא",
+      },
+    ],
+    locale: "he_IL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

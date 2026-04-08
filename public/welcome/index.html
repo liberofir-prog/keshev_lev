@@ -27,14 +27,16 @@
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .h-dvh { height: 100dvh; }
+        .min-h-dvh { min-height: 100dvh; }
     </style>
 </head>
-<body class="bg-gray-200 font-heebo text-keshev-dark flex justify-center h-screen overflow-hidden">
+<body class="bg-gray-200 font-heebo text-keshev-dark flex justify-center h-dvh overflow-hidden">
 
-    <div class="w-full max-w-md bg-keshev-cream shadow-2xl overflow-y-auto h-full snap-y snap-mandatory no-scrollbar relative">
+    <div class="w-full max-w-md bg-keshev-cream shadow-2xl overflow-y-auto h-dvh snap-y snap-mandatory no-scrollbar relative">
 
         <!-- Page 1: השער -->
-        <section class="h-full w-full snap-start flex flex-col items-center justify-center p-8 text-center relative">
+        <section class="h-dvh w-full snap-start flex flex-col items-center justify-center p-8 text-center relative">
             <div class="absolute top-8 w-full text-center flex flex-col items-center">
                 <img src="/welcome/logo.png" alt="קשב הלב" class="w-48 h-48 mb-2 object-contain" />
             </div>
@@ -59,7 +61,7 @@
         </section>
 
         <!-- Page 2: זיהוי הכאב -->
-        <section class="h-full w-full snap-start flex flex-col justify-center p-8">
+        <section class="h-dvh w-full snap-start flex flex-col justify-center p-8">
             <h2 class="text-3xl font-bold text-keshev-salmon mb-6 text-center">
                 זה נשמע לכם מוכר?
             </h2>
@@ -103,7 +105,7 @@
         </section>
 
         <!-- Page 3: נעים מאוד -->
-        <section class="h-full w-full snap-start flex flex-col justify-center p-8 bg-white">
+        <section class="h-dvh w-full snap-start flex flex-col justify-center p-8 bg-white">
             <!-- Hila photo -->
             <div class="flex flex-col items-center mb-6">
                 <div class="w-32 h-32 rounded-full overflow-hidden shadow-md">
@@ -135,7 +137,7 @@
         </section>
 
         <!-- Page 3.5: כלי מעשי (בית משפט למחשבות) -->
-        <section class="h-full w-full snap-start flex flex-col justify-center p-4 relative bg-gray-200">
+        <section class="h-dvh w-full snap-start flex flex-col justify-center p-4 relative bg-gray-200">
             <div class="w-full max-h-[92vh] bg-white rounded-[2rem] shadow-2xl overflow-hidden relative border border-gray-100 flex flex-col my-auto">
                 <div class="h-2.5 w-full bg-gradient-to-r from-keshev-salmon to-keshev-sage shrink-0"></div>
 
@@ -210,7 +212,7 @@
         </section>
 
         <!-- Page 4: תחומי הטיפול -->
-        <section class="min-h-full w-full snap-start flex flex-col justify-center p-6 bg-gray-50 relative pb-12">
+        <section class="min-h-dvh w-full snap-start flex flex-col justify-center p-6 bg-gray-50 relative pb-12">
             <h2 class="text-3xl font-bold text-keshev-salmon mb-2 text-center mt-4">
                 במה אנחנו מטפלים?
             </h2>
@@ -300,7 +302,7 @@
         </section>
 
         <!-- Page 5: השיטה -->
-        <section class="h-full w-full snap-start flex flex-col justify-center p-8">
+        <section class="h-dvh w-full snap-start flex flex-col justify-center p-8">
             <h2 class="text-3xl font-bold text-keshev-salmon mb-8 text-center">
                 הדרך של קשב הלב
             </h2>
@@ -334,7 +336,7 @@
         </section>
 
         <!-- Page 6: CTA -->
-        <section class="h-full w-full snap-start flex flex-col justify-center p-8 text-center bg-white">
+        <section class="h-dvh w-full snap-start flex flex-col justify-center p-8 text-center bg-white">
             <h2 class="text-3xl font-bold text-keshev-sage mb-4 leading-tight">
                 מוכנים לעזור להם לשחרר את התקיעות?
             </h2>

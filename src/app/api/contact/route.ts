@@ -1,21 +1,33 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validations";
 
-// TODO: Replace with your actual endpoint URL
-const EXTERNAL_ENDPOINT = process.env.CONTACT_ENDPOINT_URL || "";
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const TYPE_LABELS: Record<string, string> = {
+  youth: "נוער והורים",
+  adult: "מבוגרים / זוגי",
+  other: "אחר",
+};
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const validated = contactFormSchema.parse(body);
 
-    if (EXTERNAL_ENDPOINT) {
-      await fetch(EXTERNAL_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(validated),
-      });
-    }
+    await resend.emails.send({
+      from: "קשב הלב <onboarding@resend.dev>",
+      to: "Hilabg79@gmail.com",
+      subject: `פנייה חדשה מהאתר — ${validated.name}`,
+      html: `
+        <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 500px;">
+          <h2 style="color: #7FB5A0;">פנייה חדשה מאתר קשב הלב</h2>
+          <p><strong>שם:</strong> ${validated.name}</p>
+          <p><strong>טלפון:</strong> ${validated.phone}</p>
+          <p><strong>סוג פנייה:</strong> ${TYPE_LABELS[validated.type] ?? validated.type}</p>
+        </div>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch {

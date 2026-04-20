@@ -95,15 +95,37 @@
   --sidebar-ring: #8cbf9e;
 }
 
+@keyframes wa-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgb(37 211 102 / 0.4),
+      0 4px 16px rgb(37 211 102 / 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 0 12px rgb(37 211 102 / 0),
+      0 4px 16px rgb(37 211 102 / 0.3);
+  }
+}
+
+.wa-pulse {
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-y: none;
   }
   html {
     @apply font-sans scroll-smooth;
+    overflow-x: hidden;
+    background-color: #FDF8F0;
   }
 }
 
@@ -111,6 +133,16 @@
 .font-display {
   font-family: var(--font-display), serif;
 }
+
+/* Safari fix: prevent animated sections from rendering above the fixed navbar.
+   isolation:isolate + z-index:0 ensures each section is a contained stacking
+   context that can never exceed the navbar's z-index:9999. */
+main > section {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

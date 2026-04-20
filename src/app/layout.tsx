@@ -1,4 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import WhatsAppFab from "@/components/WhatsAppFab";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 import { Rubik, Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 
@@ -45,7 +52,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body className={`${rubik.variable} ${frankRuhlLibre.variable} antialiased`}>{children}</body>
+      <body className={`${rubik.variable} ${frankRuhlLibre.variable} antialiased`}>
+        {children}
+        <WhatsAppFab />
+      </body>
     </html>
   );
 }

@@ -9,6 +9,7 @@ export const contactFormSchema = z.object({
   type: z.enum(["youth", "adult", "other"], {
     message: "נא לבחור סוג פנייה",
   }),
+  message: z.string().optional(),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;

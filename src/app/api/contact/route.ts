@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validations";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TYPE_LABELS: Record<string, string> = {
   youth: "נוער והורים",
   adult: "מבוגרים / זוגי",
@@ -15,6 +13,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const validated = contactFormSchema.parse(body);
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "קשב הלב <onboarding@resend.dev>",
       to: "Hilabg79@gmail.com",
@@ -25,6 +24,7 @@ export async function POST(request: Request) {
           <p><strong>שם:</strong> ${validated.name}</p>
           <p><strong>טלפון:</strong> ${validated.phone}</p>
           <p><strong>סוג פנייה:</strong> ${TYPE_LABELS[validated.type] ?? validated.type}</p>
+          ${validated.message ? `<p><strong>הודעה:</strong> ${validated.message}</p>` : ""}
         </div>
       `,
     });

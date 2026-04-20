@@ -207,6 +207,23 @@ export default function ContactForm() {
                     error={errors.phone?.message}
                   />
 
+                  {/* Message */}
+                  <div className="relative">
+                    <textarea
+                      id="message"
+                      rows={3}
+                      placeholder=" "
+                      className="peer w-full rounded-xl border border-cream-dark bg-cream/50 px-4 pt-6 pb-2 text-warm-brown transition-all duration-300 placeholder-transparent focus:border-mint focus:ring-2 focus:ring-mint/30 focus:outline-none resize-none"
+                      {...register("message")}
+                    />
+                    <label
+                      htmlFor="message"
+                      className="pointer-events-none absolute right-4 top-2 text-xs font-medium text-warm-brown-text/80 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-mint-dark"
+                    >
+                      ספר/י לנו במה נוכל לסייע (אופציונלי)
+                    </label>
+                  </div>
+
                   {/* Type */}
                   <div className="relative">
                     <select

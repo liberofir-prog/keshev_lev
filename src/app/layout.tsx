@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import WhatsAppFab from "@/components/WhatsAppFab";
 
 export const viewport: Viewport = {
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className={`${rubik.variable} ${frankRuhlLibre.variable} antialiased`}>
         {children}
         <WhatsAppFab />
+        <Analytics />
       </body>
     </html>
   );

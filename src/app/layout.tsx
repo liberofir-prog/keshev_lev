@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import WhatsAppFab from "@/components/WhatsAppFab";
 
 export const viewport: Viewport = {
@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className={`${rubik.variable} ${frankRuhlLibre.variable} antialiased`}>
         {children}
         <WhatsAppFab />
-        <Analytics />
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );
